@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PushPros Assignment</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <style>
+    .load-buttons {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title text-center">
+      <h1>Pushpros Assignment</h1>
+    </div>
+    <div class="load-buttons">
+      <button class="btn btn-primary load-from-api">Load Data From API</button>
+      <button class="btn btn-primary load-offline">Load Offline Data </button>
+    </div>
+    <hr>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">
+              ID
+            </th>
+            <th scope="col">
+              Name
+            </th>
+            <th scope="col">
+              URL
+            </th>
+          </tr>
+        </thead>
+        <tbody id="table-container"></tbody>
+      </table>
+    </div>
+    <script id="table-template" type="text/x-handlebars-template">
+      {{#each sites}}
+        <tr>
+          <td>
+            {{this.id}}
+          </td>
+          <td>
+            {{this.name}}
+          </td>
+          <td>
+            {{this.url}}
+          </td>
+        </tr>
+      {{/each}}
+    </script>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
